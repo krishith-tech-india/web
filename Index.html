@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrishithTech — Scalable Software & IT Engineering</title>
+    <meta name="description" content="KrishithTech builds scalable web applications, mobile apps, and cloud infrastructure for modern businesses.">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            950: '#060B19',
+                            900: '#0B1120',
+                            800: '#131C31',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons via CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="font-sans text-slate-800 bg-white antialiased selection:bg-indigo-500 selection:text-white overflow-x-hidden">
+
+    <!-- ===================================================================== -->
+    <!-- STICKY NAVIGATION BAR                                                 -->
+    <!-- ===================================================================== -->
+    <header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-navy-950/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-18 py-3.5">
+                <!-- Brand Logo (Easy to customize: update icon & text) -->
+                <a href="#hero" class="flex items-center gap-2.5 group focus:outline-none">
+                    <div class="w-9 h-9 rounded-xl  flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <img src="./Logo/IconOnly_Transparent.png" style="max-width: 250%;" />
+                    </div>
+                    <span class="text-xl font-bold tracking-tight text-white">
+                        Krishith<span class="text-cyan-400">Tech</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#services" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Services</a>
+                    <a href="#process" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Process</a>
+                    <a href="#tech-stack" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Tech Stack</a>
+                    <a href="#why-us" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Why Us</a>
+                </nav>
+
+                <!-- Desktop CTA Button -->
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="#contact" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 shadow-lg shadow-indigo-500/25 transition-all hover:-translate-y-0.5">
+                        Get in Touch
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <button id="mobile-menu-btn" type="button" aria-label="Toggle Navigation Menu" class="md:hidden p-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition-colors">
+                    <i id="menu-icon-open" data-lucide="menu" class="w-6 h-6"></i>
+                    <i id="menu-icon-close" data-lucide="x" class="w-6 h-6 hidden"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-900/95 backdrop-blur-xl border-b border-white/10">
+            <div class="px-4 pt-2 pb-6 space-y-1.5">
+                <a href="#services" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-colors">Services</a>
+                <a href="#process" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-colors">Process</a>
+                <a href="#tech-stack" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-colors">Tech Stack</a>
+                <a href="#why-us" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:text-white hover:bg-white/10 transition-colors">Why Us</a>
+                <div class="pt-3">
+                    <a href="#contact" class="mobile-nav-link flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-indigo-600 to-cyan-500 shadow-lg shadow-indigo-500/25">
+                        Get in Touch
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===================================================================== -->
+    <!-- HERO SECTION                                                          -->
+    <!-- ===================================================================== -->
+    <section id="hero" class="relative pt-28 pb-20 lg:pt-36 lg:pb-28 bg-navy-950 text-white overflow-hidden">
+        <!-- Subtle Background Tech Grid & Radial Glows -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden">
+            <div class="absolute -top-24 -left-24 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl"></div>
+            <div class="absolute top-1/2 -right-24 w-96 h-96 bg-cyan-500/15 rounded-full blur-3xl"></div>
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_75%_65%_at_50%_30%,#000_70%,transparent_100%)]"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+                <!-- Left Column: Copy & CTAs -->
+                <div class="lg:col-span-6 space-y-7 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm font-medium text-cyan-300">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
+                        </span>
+                        Accepting New Projects for Q1 &amp; Q2
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-white">
+                        Building Scalable Software for <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-cyan-300 to-indigo-400">Modern Businesses</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        KrishithTech is a focused software engineering studio turning ambitious ideas into reliable web platforms, mobile apps, and cloud-native systems—built cleanly from day one.
+                    </p>
+
+                    <!-- Primary & Secondary CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 shadow-xl shadow-indigo-600/25 transition-all hover:-translate-y-0.5">
+                            Start a Project
+                            <i data-lucide="rocket" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#services" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-base font-semibold text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10 transition-all">
+                            Explore Services
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                    <!-- Engineering Credibility Highlights (No fake client claims) -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <div class="text-lg sm:text-xl font-bold text-white">100%</div>
+                            <div class="text-xs text-slate-400 mt-0.5">Code Ownership</div>
+                        </div>
+                        <div>
+                            <div class="text-lg sm:text-xl font-bold text-cyan-400">2-Week</div>
+                            <div class="text-xs text-slate-400 mt-0.5">Agile Sprints</div>
+                        </div>
+                        <div>
+                            <div class="text-lg sm:text-xl font-bold text-indigo-400">Direct</div>
+                            <div class="text-xs text-slate-400 mt-0.5">Engineer Access</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Glassmorphism Engineering Dashboard Preview -->
+                <div class="lg:col-span-6">
+                    <div class="relative rounded-2xl bg-navy-900/70 backdrop-blur-xl border border-white/15 shadow-2xl shadow-indigo-950/60 overflow-hidden">
+                        <!-- Window Top Bar -->
+                        <div class="flex items-center justify-between px-5 py-3.5 border-b border-white/10 bg-white/[0.03]">
+                            <div class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
+                                <span class="w-3 h-3 rounded-full bg-amber-400/80"></span>
+                                <span class="w-3 h-3 rounded-full bg-emerald-400/80"></span>
+                            </div>
+                            <div class="text-xs font-mono text-slate-400">KrishithTech-delivery-blueprint</div>
+                            <span class="px-2 py-0.5 rounded-md text-[11px] font-medium bg-emerald-500/15 text-emerald-300 border border-emerald-500/20">Production Ready</span>
+                        </div>
+
+                        <!-- Interactive Tabs inside Dashboard -->
+                        <div class="flex items-center gap-2 px-5 pt-4 border-b border-white/10 overflow-x-auto">
+                            <button type="button" data-hero-tab="architecture" class="hero-tab-btn pb-3 px-3 text-xs sm:text-sm font-medium border-b-2 border-cyan-400 text-cyan-300 whitespace-nowrap transition-colors">
+                                Architecture
+                            </button>
+                            <button type="button" data-hero-tab="pipeline" class="hero-tab-btn pb-3 px-3 text-xs sm:text-sm font-medium border-b-2 border-transparent text-slate-400 hover:text-slate-200 whitespace-nowrap transition-colors">
+                                CI/CD Workflow
+                            </button>
+                            <button type="button" data-hero-tab="standards" class="hero-tab-btn pb-3 px-3 text-xs sm:text-sm font-medium border-b-2 border-transparent text-slate-400 hover:text-slate-200 whitespace-nowrap transition-colors">
+                                Quality Standards
+                            </button>
+                        </div>
+
+                        <!-- Tab Content Panels -->
+                        <div class="p-5 sm:p-6 min-h-[290px]">
+                            <!-- Tab 1: Architecture -->
+                            <div id="hero-panel-architecture" class="hero-tab-panel space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Cloud-Native Blueprint</span>
+                                    <span class="text-xs text-cyan-400 font-mono">v2.4 Modular</span>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <div class="p-4 rounded-xl bg-white/[0.04] border border-white/10">
+                                        <div class="flex items-center gap-2.5 mb-2">
+                                            <div class="p-2 rounded-lg bg-indigo-500/20 text-indigo-300">
+                                                <i data-lucide="layout-grid" class="w-4 h-4"></i>
+                                            </div>
+                                            <div class="text-sm font-semibold text-white">Frontend Layer</div>
+                                        </div>
+                                        <p class="text-xs text-slate-400 leading-relaxed">React / Next.js &amp; TypeScript with responsive, accessible UI systems.</p>
+                                    </div>
+                                    <div class="p-4 rounded-xl bg-white/[0.04] border border-white/10">
+                                        <div class="flex items-center gap-2.5 mb-2">
+                                            <div class="p-2 rounded-lg bg-cyan-500/20 text-cyan-300">
+                                                <i data-lucide="server" class="w-4 h-4"></i>
+                                            </div>
+                                            <div class="text-sm font-semibold text-white">API &amp; Services</div>
+                                        </div>
+                                        <p class="text-xs text-slate-400 leading-relaxed">REST &amp; GraphQL microservices powered by Node.js, C#, or Python.</p>
+                                    </div>
+                                </div>
+                                <div class="p-4 rounded-xl bg-gradient-to-r from-indigo-500/10 to-cyan-500/10 border border-indigo-400/20 flex items-center justify-between gap-4">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="shield-check" class="w-5 h-5 text-cyan-400 shrink-0"></i>
+                                        <div>
+                                            <div class="text-sm font-semibold text-white">Security &amp; Observability Built-In</div>
+                                            <div class="text-xs text-slate-300">Automated backups, JWT/OAuth2 auth, and real-time logging.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tab 2: CI/CD Workflow -->
+                            <div id="hero-panel-pipeline" class="hero-tab-panel hidden space-y-3.5">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Automated Delivery Pipeline</span>
+                                    <span class="text-xs text-emerald-400 font-mono">Zero-Downtime</span>
+                                </div>
+                                <div class="space-y-2.5">
+                                    <div class="flex items-center justify-between p-3 rounded-xl bg-white/[0.04] border border-white/10">
+                                        <div class="flex items-center gap-3">
+                                            <i data-lucide="git-branch" class="w-4 h-4 text-indigo-400"></i>
+                                            <span class="text-sm text-slate-200">1. Pull Request &amp; Code Review</span>
+                                        </div>
+                                        <span class="text-xs font-mono text-emerald-400">Passed</span>
+                                    </div>
+                                    <div class="flex items-center justify-between p-3 rounded-xl bg-white/[0.04] border border-white/10">
+                                        <div class="flex items-center gap-3">
+                                            <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400"></i>
+                                            <span class="text-sm text-slate-200">2. Unit &amp; Integration Tests</span>
+                                        </div>
+                                        <span class="text-xs font-mono text-emerald-400">Automated</span>
+                                    </div>
+                                    <div class="flex items-center justify-between p-3 rounded-xl bg-white/[0.04] border border-white/10">
+                                        <div class="flex items-center gap-3">
+                                            <i data-lucide="container" class="w-4 h-4 text-indigo-400"></i>
+                                            <span class="text-sm text-slate-200">3. Docker Build &amp; Staging Preview</span>
+                                        </div>
+                                        <span class="text-xs font-mono text-cyan-400">Live URL</span>
+                                    </div>
+                                    <div class="flex items-center justify-between p-3 rounded-xl bg-white/[0.04] border border-white/10">
+                                        <div class="flex items-center gap-3">
+                                            <i data-lucide="cloud-upload" class="w-4 h-4 text-emerald-400"></i>
+                                            <span class="text-sm text-slate-200">4. AWS / Azure Production Release</span>
+                                        </div>
+                                        <span class="text-xs font-mono text-emerald-400">Monitored</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tab 3: Quality Standards -->
+                            <div id="hero-panel-standards" class="hero-tab-panel hidden space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Engineering Commitments</span>
+                                    <span class="text-xs text-indigo-300 font-mono">Clean Code</span>
+                                </div>
+                                <div class="space-y-3">
+                                    <div>
+                                        <div class="flex justify-between text-xs mb-1.5">
+                                            <span class="text-slate-300">Performance &amp; Core Web Vitals</span>
+                                            <span class="text-cyan-400 font-semibold">95+ Target</span>
+                                        </div>
+                                        <div class="w-full h-2 rounded-full bg-white/10 overflow-hidden">
+                                            <div class="h-full w-[96%] rounded-full bg-gradient-to-r from-indigo-500 to-cyan-400"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between text-xs mb-1.5">
+                                            <span class="text-slate-300">Documentation &amp; Maintainability</span>
+                                            <span class="text-cyan-400 font-semibold">Full Handover</span>
+                                        </div>
+                                        <div class="w-full h-2 rounded-full bg-white/10 overflow-hidden">
+                                            <div class="h-full w-[100%] rounded-full bg-gradient-to-r from-indigo-500 to-cyan-400"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between text-xs mb-1.5">
+                                            <span class="text-slate-300">Mobile &amp; Cross-Browser Compatibility</span>
+                                            <span class="text-cyan-400 font-semibold">100% Responsive</span>
+                                        </div>
+                                        <div class="w-full h-2 rounded-full bg-white/10 overflow-hidden">
+                                            <div class="h-full w-[100%] rounded-full bg-gradient-to-r from-indigo-500 to-cyan-400"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-slate-400 pt-1">
+                                    Every repository ships with clear architecture docs, environment setup guides, and zero vendor lock-in.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- SERVICES SECTION (6 Interactive Cards)                                -->
+    <!-- ===================================================================== -->
+    <section id="services" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="max-w-2xl mx-auto text-center mb-16 reveal-on-scroll opacity-0 translate-y-6 transition-all duration-700">
+                <span class="inline-block px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-indigo-50 text-indigo-600 mb-3">
+                    Our Services
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                    End-to-End Engineering Capabilities
+                </h2>
+                <p class="mt-4 text-base sm:text-lg text-slate-600">
+                    From initial product discovery to scalable cloud deployment, we deliver modern software tailored to your business goals.
+                </p>
+            </div>
+
+            <!-- 6 Service Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Service 1 -->
+                <div class="reveal-on-scroll opacity-0 translate-y-6 transition-all duration-700 group p-7 rounded-2xl bg-slate-50/70 hover:bg-white border border-slate-200/80 hover:border-indigo-300 hover:shadow-xl hover:shadow-indigo-500/10 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-indigo-600/10 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white flex items-center justify-center transition-colors mb-5">
+                            <i data-lucide="globe" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2.5">Web Application Development</h3>
+                        <p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-6">
+                            Fast, secure, and responsive SaaS platforms, customer portals, and internal dashboards engineered with modern frameworks.
+                        </p>
+                    </div>
+                    <button type="button" data-select-service="Web Application Development" class="service-cta inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-600 group-hover:text-indigo-700">
+                        Discuss this service
+                        <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+                    </button>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="reveal-on-scroll opacity-0 translate-y-6 transition-all duration-700 group p-7 rounded-2xl bg-slate-50/70 hover:bg-white border border-slate-200/80 hover:border-cyan-300 hover:shadow-xl hover:shadow-cyan-500/10 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-600 group-hover:bg-cyan-500 group-hover:text-white flex items-center justify-center transition-colors mb-5">
+                            <i data-lucide="smartphone" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2.5">Mobile App Development</h3>
+                        <p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-6">
+                            Intuitive cross-platform iOS and Android applications built for smooth performance, offline resilience, and seamless API integration.
+                        </p>
+                    </div>
+                    <button type="button" data-select-service="Mobile App Development" class="service-cta inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-600 group-hover:text-cyan-700">
+                        Discuss this service
+                        <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+                    </button>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="reveal-on-scroll opacity-0 translate-y-6 transition-all duration-700 group p-7 rounded-2xl bg-slate-50/70 hover:bg-white border border-slate-200/80 hover:border-indigo-300 hover:shadow-xl hover:shadow-indigo-500/10 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-indigo-600/10 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white flex items-center justify-center transition-colors mb-5">
+                            <i data-lucide="cloud" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2.5">Cloud &amp; DevOps</h3>
+                        <p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-6">
+                            Automated CI/CD pipelines, containerized workloads, and cost-efficient AWS &amp; Azure cloud infrastructure built to scale effortlessly.
+                        </p>
+                    </div>
+                    <button type="button" data-select-service="Cloud & DevOps" class="service-cta inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-600 group-hover:text-indigo-700">
+                        Discuss this service
+                        <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+                    </button>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="reveal-on-scroll opacity-0 translate-y-6 transition-all duration-700 group p-7 rounded-2xl bg-slate-50/70 hover:bg-white border border-slate-200/80 hover:border-cyan-300 hover:shadow-xl hover:shadow-cyan-500/10 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-600 group-hover:bg-cyan-500 group-hover:text-white flex items-center justify-center transition-colors mb-5">
+                            <i data-lucide="code-2" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2.5">Custom Software Engineering</h3>
+                        <p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-6">
+                            Bespoke backend systems, third-party API integrations, and workflow automation tailored to solve your unique operational bottlenecks.
+                        </p>
+                    </div>
+                    <button type="button" data-select-service="Custom Software Engineering" class="service-cta inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-600 group-hover:text-cyan-700">
+                        Discuss this service
+                        <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+                    </button>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="reveal-on-scroll opacity-0 translate-y-6 transition-all duration-700 group p-7 rounded-2xl bg-slate-50/70 hover:bg-white border border-slate-200/80 hover:border-indigo-300 hover:shadow-xl hover:shadow-indigo-500/10 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-indigo-600/10 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white flex items-center justify-center transition-colors mb-5">
+                            <i data-lucide="figma" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2.5">UI/UX Design</h3>
+                        <p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-6">
+                            User-centered wireframes, interactive prototypes, and cohesive design systems that turn complex workflows into delightful experiences.
+                        </p>
+                    </div>
+                    <button type="button" data-select-service="UI/UX Design" class="service-cta inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-600 group-hover:text-indigo-700">
+                        Discuss this service
+                        <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+                    </button>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="reveal-on-scroll opacity-0 translate-y-6 transition-all duration-700 group p-7 rounded-2xl bg-slate-50/70 hover:bg-white border border-slate-200/80 hover:border-cyan-300 hover:shadow-xl hover:shadow-cyan-500/10 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-600 group-hover:bg-cyan-500 group-hover:text-white flex items-center justify-center transition-colors mb-5">
+                            <i data-lucide="life-buoy" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2.5">IT Consulting &amp; Support</h3>
+                        <p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-6">
+                            Technical architecture reviews, MVP roadmapping, legacy modernization strategy, and ongoing maintenance to keep systems running smoothly.
+                        </p>
+                    </div>
+                    <button type="button" data-select-service="IT Consulting & Support" class="service-cta inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-600 group-hover:text-cyan-700">
+                        Discuss this service
+                        <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- OUR PROCESS ("HOW WE WORK")                                           -->
+    <!-- ===================================================================== -->
+    <section id="process" class="py-20 lg:py-28 bg-slate-50 border-y border-slate-200/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mx-auto text-center mb-16 reveal-on-scroll opacity-0 translate-y-6 transition-all duration-700">
+                <span class="inline-block px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-cyan-50 text-cyan-700 border border-cyan-200/70 mb-3">
+                    How We Work
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                    A Transparent, Structured Process
+                </h2>
+                <p class="mt-4 text-base sm:text-lg text-slate-600">
+                    No guesswork or black-box development. You stay informed at every milestone with clear deliverables and weekly demos.
+                </p>
+            </div>
+
+            <!-- 4-Step Process Grid -->
+            <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                <!-- Connector Line on Desktop -->
+                <div class="hidden lg:block absolute top-11 left-[12%] right-[12%] h-0.5 bg-gradient-to-r from-indigo-200 via-cyan-300 to-indigo-200"></div>
+
+                <!-- Step 1 -->
+                <div class="reveal-on-scroll opacity-0 translate-y-6 transition-all duration-700 relative bg-white p-7 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-500 text-white font-bold text-lg flex items-center justify-center shadow-lg shadow-indigo-500/25 mb-5">
+                        01
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Discovery &amp; Planning</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        We align on your business goals, user needs, technical scope, and timeline—delivering a clear project roadmap and fixed milestones.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="reveal-on-scroll opacity-0 translate-y-6 transition-all duration-700 relative bg-white p-7 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-cyan-500 text-white font-bold text-lg flex items-center justify-center shadow-lg shadow-cyan-500/25 mb-5">
+                        02
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">UI/UX &amp; Architecture</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        We craft clickable wireframes, visual prototypes, and scalable system &amp; database blueprints so you see the product before a line of code is written.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="reveal-on-scroll opacity-0 translate-y-6 transition-all duration-700 relative bg-white p-7 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-500 to-indigo-500 text-white font-bold text-lg flex items-center justify-center shadow-lg shadow-indigo-500/25 mb-5">
+                        03
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Agile Development</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        We build in focused two-week sprints with automated testing, staging previews, and regular check-ins so you can review real progress continuously.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="reveal-on-scroll opacity-0 translate-y-6 transition-all duration-700 relative bg-white p-7 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-600 to-cyan-500 text-white font-bold text-lg flex items-center justify-center shadow-lg shadow-cyan-500/25 mb-5">
+                        04
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Launch &amp; Support</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        We handle production deployment, performance monitoring, full documentation handover, and ongoing post-launch support as your product grows.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- TECH STACK SECTION                                                    -->
+    <!-- ===================================================================== -->
+    <section id="tech-stack" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mx-auto text-center mb-12 reveal-on-scroll opacity-0 translate-y-6 transition-all duration-700">
+                <span class="inline-block px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-indigo-50 text-indigo-600 mb-3">
+                    Modern Tech Stack
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                    Proven, Future-Ready Technologies
+                </h2>
+                <p class="mt-4 text-base sm:text-lg text-slate-600">
+                    We select battle-tested frameworks and cloud tools that maximize developer velocity, security, and long-term maintainability.
+                </p>
+            </div>
+
+            <!-- Interactive Category Filter Pills -->
+            <div class="flex flex-wrap items-center justify-center gap-2.5 mb-12">
+                <button type="button" data-stack-filter="all" class="stack-filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-navy-950 text-white shadow-sm transition-all">
+                    All Technologies
+                </button>
+                <button type="button" data-stack-filter="frontend" class="stack-filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">
+                    Frontend
+                </button>
+                <button type="button" data-stack-filter="backend" class="stack-filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">
+                    Backend
+                </button>
+                <button type="button" data-stack-filter="cloud" class="stack-filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">
+                    Cloud &amp; DevOps
+                </button>
+                <button type="button" data-stack-filter="databases" class="stack-filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">
+                    Databases
+                </button>
+            </div>
+
+            <!-- Categorized Tech Stack Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                <!-- Frontend Category -->
+                <div data-stack-category="frontend" class="stack-card p-7 rounded-2xl bg-slate-50 border border-slate-200/80 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-600/10 text-indigo-600 flex items-center justify-center">
+                            <i data-lucide="monitor" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900">Frontend</h3>
+                            <p class="text-xs text-slate-500">Interactive, responsive user interfaces</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2.5">
+                        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-800 shadow-xs hover:border-indigo-400 transition-colors">
+                            <span class="w-2 h-2 rounded-full bg-cyan-400"></span> React
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-800 shadow-xs hover:border-indigo-400 transition-colors">
+                            <span class="w-2 h-2 rounded-full bg-rose-500"></span> Angular
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-800 shadow-xs hover:border-indigo-400 transition-colors">
+                            <span class="w-2 h-2 rounded-full bg-blue-500"></span> TypeScript
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-800 shadow-xs hover:border-indigo-400 transition-colors">
+                            <span class="w-2 h-2 rounded-full bg-slate-900"></span> Next.js
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Backend Category -->
+                <div data-stack-category="backend" class="stack-card p-7 rounded-2xl bg-slate-50 border border-slate-200/80 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-600 flex items-center justify-center">
+                            <i data-lucide="cpu" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900">Backend</h3>
+                            <p class="text-xs text-slate-500">High-performance APIs &amp; business logic</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2.5">
+                        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-800 shadow-xs hover:border-cyan-400 transition-colors">
+                            <span class="w-2 h-2 rounded-full bg-purple-600"></span> C# / .NET
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-800 shadow-xs hover:border-cyan-400 transition-colors">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Node.js
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-800 shadow-xs hover:border-cyan-400 transition-colors">
+                            <span class="w-2 h-2 rounded-full bg-amber-500"></span> Python
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Cloud & DevOps Category -->
+                <div data-stack-category="cloud" class="stack-card p-7 rounded-2xl bg-slate-50 border border-slate-200/80 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-600/10 text-indigo-600 flex items-center justify-center">
+                            <i data-lucide="cloud-cog" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900">Cloud &amp; DevOps</h3>
+                            <p class="text-xs text-slate-500">Scalable infrastructure &amp; orchestration</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2.5">
+                        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-800 shadow-xs hover:border-indigo-400 transition-colors">
+                            <span class="w-2 h-2 rounded-full bg-orange-500"></span> AWS
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-800 shadow-xs hover:border-indigo-400 transition-colors">
+                            <span class="w-2 h-2 rounded-full bg-sky-500"></span> Azure
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-800 shadow-xs hover:border-indigo-400 transition-colors">
+                            <span class="w-2 h-2 rounded-full bg-blue-500"></span> Docker
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-800 shadow-xs hover:border-indigo-400 transition-colors">
+                            <span class="w-2 h-2 rounded-full bg-indigo-500"></span> Kubernetes
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Databases Category -->
+                <div data-stack-category="databases" class="stack-card p-7 rounded-2xl bg-slate-50 border border-slate-200/80 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-600 flex items-center justify-center">
+                            <i data-lucide="database" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900">Databases</h3>
+                            <p class="text-xs text-slate-500">Reliable relational &amp; NoSQL data stores</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2.5">
+                        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-800 shadow-xs hover:border-cyan-400 transition-colors">
+                            <span class="w-2 h-2 rounded-full bg-blue-600"></span> PostgreSQL
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-800 shadow-xs hover:border-cyan-400 transition-colors">
+                            <span class="w-2 h-2 rounded-full bg-emerald-600"></span> MongoDB
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-800 shadow-xs hover:border-cyan-400 transition-colors">
+                            <span class="w-2 h-2 rounded-full bg-red-600"></span> SQL Server
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- WHY PARTNER WITH US (Dark Navy Contrast Section)                      -->
+    <!-- ===================================================================== -->
+    <section id="why-us" class="relative py-20 lg:py-28 bg-navy-950 text-white overflow-hidden">
+        <!-- Subtle Background Glow -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-indigo-600/15 rounded-full blur-3xl"></div>
+            <div class="absolute top-0 right-1/4 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mx-auto text-center mb-16 reveal-on-scroll opacity-0 translate-y-6 transition-all duration-700">
+                <span class="inline-block px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-white/10 text-cyan-300 border border-white/10 mb-3">
+                    Why Partner With Us
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+                    The Advantage of an Agile Engineering Partner
+                </h2>
+                <p class="mt-4 text-base sm:text-lg text-slate-300">
+                    Working with a focused, newly launched studio means your project is our top priority—not just another ticket in a massive agency queue.
+                </p>
+            </div>
+
+            <!-- 4 Key Advantages Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                <!-- Advantage 1 -->
+                <div class="reveal-on-scroll opacity-0 translate-y-6 transition-all duration-700 p-7 rounded-2xl bg-white/[0.04] backdrop-blur-sm border border-white/10 hover:border-indigo-400/40 transition-colors flex gap-5">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-300 flex items-center justify-center shrink-0">
+                        <i data-lucide="user-check" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">Direct Senior-Level Attention</h3>
+                        <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                            You communicate directly with the engineers architecting and writing your software—no account manager telephone game or junior handoffs.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Advantage 2 -->
+                <div class="reveal-on-scroll opacity-0 translate-y-6 transition-all duration-700 p-7 rounded-2xl bg-white/[0.04] backdrop-blur-sm border border-white/10 hover:border-cyan-400/40 transition-colors flex gap-5">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-300 flex items-center justify-center shrink-0">
+                        <i data-lucide="file-check-2" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">Transparent Pricing &amp; Timelines</h3>
+                        <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                            Clear milestone-based estimates with zero hidden fees. You always know what is being built, when it ships, and exactly what it costs.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Advantage 3 -->
+                <div class="reveal-on-scroll opacity-0 translate-y-6 transition-all duration-700 p-7 rounded-2xl bg-white/[0.04] backdrop-blur-sm border border-white/10 hover:border-cyan-400/40 transition-colors flex gap-5">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-300 flex items-center justify-center shrink-0">
+                        <i data-lucide="blocks" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">Modern Scalable Codebase</h3>
+                        <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                            Clean, modular, and well-documented code built on modern standards—so your software is easy to scale, audit, or hand over to an in-house team later.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Advantage 4 -->
+                <div class="reveal-on-scroll opacity-0 translate-y-6 transition-all duration-700 p-7 rounded-2xl bg-white/[0.04] backdrop-blur-sm border border-white/10 hover:border-indigo-400/40 transition-colors flex gap-5">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-300 flex items-center justify-center shrink-0">
+                        <i data-lucide="zap" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">Rapid Iteration</h3>
+                        <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                            Zero bureaucracy means faster decisions, quick pivots based on real user feedback, and getting your MVP or core system to market sooner.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- CONTACT & FREE CONSULTATION SECTION                                   -->
+    <!-- ===================================================================== -->
+    <section id="contact" class="py-20 lg:py-28 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <!-- Left Column: Consultation Pitch & Contact Details -->
+                <div class="lg:col-span-5 space-y-8 reveal-on-scroll opacity-0 translate-y-6 transition-all duration-700">
+                    <div>
+                        <span class="inline-block px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-indigo-50 text-indigo-600 mb-3">
+                            Free Consultation
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                            Let’s Build Something Great Together
+                        </h2>
+                        <p class="mt-4 text-base text-slate-600 leading-relaxed">
+                            Have an idea, a technical challenge, or need a reliable engineering partner? Tell us about your project and we’ll respond within 24 hours with a complimentary technical consultation.
+                        </p>
+                    </div>
+
+                    <!-- Contact Info Cards (Customize with your real details) -->
+                    <div class="space-y-4">
+                        <div class="p-4 rounded-2xl bg-white border border-slate-200/80 flex items-center justify-between gap-4">
+                            <div class="flex items-center gap-4">
+                                <div class="w-11 h-11 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
+                                    <i data-lucide="mail" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs font-medium text-slate-500">Email Us</div>
+                                    <div id="contact-email-text" class="text-sm sm:text-base font-semibold text-slate-900">business@Krishith.com</div>
+                                </div>
+                            </div>
+                            <button type="button" id="copy-email-btn" title="Copy email address" class="p-2.5 rounded-xl text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 transition-colors">
+                                <i data-lucide="copy" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-white border border-slate-200/80 flex items-center gap-4">
+                            <div class="w-11 h-11 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs font-medium text-slate-500">Location</div>
+                                <div class="text-sm sm:text-base font-semibold text-slate-900">Remote-First • Serving Clients Worldwide</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Contact Form -->
+                <div class="lg:col-span-7 reveal-on-scroll opacity-0 translate-y-6 transition-all duration-700">
+                    <div class="bg-white p-6 sm:p-8 lg:p-10 rounded-3xl border border-slate-200/80 shadow-xl shadow-slate-200/50">
+                        <!-- Form State -->
+                        <form id="contact-form" novalidate class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <!-- Name Input -->
+                                <div>
+                                    <label for="name" class="block text-sm font-semibold text-slate-700 mb-2">Full Name <span class="text-rose-500">*</span></label>
+                                    <input type="text" id="name" name="name" required placeholder="Alex Morgan"
+                                        class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-all">
+                                    <p id="name-error" class="hidden text-xs text-rose-600 mt-1.5">Please enter your name.</p>
+                                </div>
+
+                                <!-- Email Input -->
+                                <div>
+                                    <label for="email" class="block text-sm font-semibold text-slate-700 mb-2">Work Email <span class="text-rose-500">*</span></label>
+                                    <input type="email" id="email" name="email" required placeholder="alex@company.com"
+                                        class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-all">
+                                    <p id="email-error" class="hidden text-xs text-rose-600 mt-1.5">Please enter a valid email address.</p>
+                                </div>
+                            </div>
+
+                            <!-- Service Needed (Interactive Selectable Chips + Dropdown Sync) -->
+                            <div>
+                                <label for="service-select" class="block text-sm font-semibold text-slate-700 mb-2">Service Needed <span class="text-rose-500">*</span></label>
+                                <select id="service-select" name="service" required
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-all mb-3">
+                                    <option value="" disabled selected>Select a primary service...</option>
+                                    <option value="Web Application Development">Web Application Development</option>
+                                    <option value="Mobile App Development">Mobile App Development</option>
+                                    <option value="Cloud & DevOps">Cloud &amp; DevOps</option>
+                                    <option value="Custom Software Engineering">Custom Software Engineering</option>
+                                    <option value="UI/UX Design">UI/UX Design</option>
+                                    <option value="IT Consulting & Support">IT Consulting &amp; Support</option>
+                                </select>
+                                <!-- Quick-pick Service Chips -->
+                                <div class="flex flex-wrap gap-2">
+                                    <button type="button" data-chip-service="Web Application Development" class="service-chip px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-600 hover:bg-indigo-50 hover:text-indigo-600 border border-transparent transition-all">Web App</button>
+                                    <button type="button" data-chip-service="Mobile App Development" class="service-chip px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-600 hover:bg-indigo-50 hover:text-indigo-600 border border-transparent transition-all">Mobile App</button>
+                                    <button type="button" data-chip-service="Cloud & DevOps" class="service-chip px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-600 hover:bg-indigo-50 hover:text-indigo-600 border border-transparent transition-all">Cloud &amp; DevOps</button>
+                                    <button type="button" data-chip-service="Custom Software Engineering" class="service-chip px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-600 hover:bg-indigo-50 hover:text-indigo-600 border border-transparent transition-all">Custom Software</button>
+                                    <button type="button" data-chip-service="UI/UX Design" class="service-chip px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-600 hover:bg-indigo-50 hover:text-indigo-600 border border-transparent transition-all">UI/UX Design</button>
+                                    <button type="button" data-chip-service="IT Consulting & Support" class="service-chip px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-600 hover:bg-indigo-50 hover:text-indigo-600 border border-transparent transition-all">IT Consulting</button>
+                                </div>
+                                <p id="service-error" class="hidden text-xs text-rose-600 mt-1.5">Please select a service.</p>
+                            </div>
+
+                            <!-- Project Details Textarea -->
+                            <div>
+                                <label for="details" class="block text-sm font-semibold text-slate-700 mb-2">Project Details <span class="text-rose-500">*</span></label>
+                                <textarea id="details" name="details" rows="4" required placeholder="Tell us about your project goals, ideal timeline, or any specific features you have in mind..."
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-500 transition-all resize-y"></textarea>
+                                <p id="details-error" class="hidden text-xs text-rose-600 mt-1.5">Please share a few details about your project.</p>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" id="submit-btn" class="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 shadow-lg shadow-indigo-500/25 transition-all hover:-translate-y-0.5 cursor-pointer">
+                                <span id="submit-btn-text">Request Free Consultation</span>
+                                <i id="submit-btn-icon" data-lucide="send" class="w-4 h-4"></i>
+                            </button>
+
+                            <p class="text-xs text-center text-slate-500">
+                                No obligation. We respect your privacy and are happy to sign an NDA before discussing sensitive details.
+                            </p>
+                        </form>
+
+                        <!-- Sleek Confirmation State (Shown upon valid submission) -->
+                        <div id="form-success" class="hidden text-center py-8 space-y-5">
+                            <div class="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 border border-emerald-200 flex items-center justify-center mx-auto">
+                                <i data-lucide="check-circle-2" class="w-9 h-9"></i>
+                            </div>
+                            <div class="space-y-2">
+                                <h3 class="text-2xl font-bold text-slate-900">Inquiry Received!</h3>
+                                <p class="text-slate-600 max-w-md mx-auto text-sm sm:text-base leading-relaxed">
+                                    Thank you, <span id="confirm-name" class="font-semibold text-slate-900"></span>. We’ve received your request regarding <span id="confirm-service" class="font-semibold text-indigo-600"></span> and will reply to <span id="confirm-email" class="font-semibold text-slate-900"></span> within 1 business day.
+                                </p>
+                            </div>
+                            <div class="pt-2">
+                                <button type="button" id="reset-form-btn" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-indigo-600 bg-indigo-50 hover:bg-indigo-100 transition-colors">
+                                    <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+                                    Send Another Inquiry
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- FOOTER                                                                -->
+    <!-- ===================================================================== -->
+    <footer class="bg-navy-950 text-slate-400 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-10 border-b border-white/10">
+                <!-- Brand Column -->
+                <div class="md:col-span-2 space-y-4">
+                    <a href="#hero" class="inline-flex items-center gap-2.5">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-400 flex items-center justify-center">
+                            <img src="./Logo/IconOnly_Transparent.png" style="max-width: 250%;" />
+                        </div>
+                        <span class="text-lg font-bold text-white">Krishith<span class="text-cyan-400">Tech</span></span>
+                    </a>
+                    <p class="text-sm text-slate-400 max-w-sm leading-relaxed">
+                        Building scalable web applications, mobile apps, and cloud infrastructure for startups and growing businesses.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Company</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#services" class="hover:text-cyan-400 transition-colors">Services</a></li>
+                        <li><a href="#process" class="hover:text-cyan-400 transition-colors">Our Process</a></li>
+                        <li><a href="#tech-stack" class="hover:text-cyan-400 transition-colors">Tech Stack</a></li>
+                        <li><a href="#why-us" class="hover:text-cyan-400 transition-colors">Why Partner With Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Connect -->
+                <div>
+                    <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Connect</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#contact" class="hover:text-cyan-400 transition-colors">Free Consultation</a></li>
+                        <li><a href="mailto:hr@krishith.com" class="hover:text-cyan-400 transition-colors">business@Krishith.com</a></li>
+                        <li class="flex items-center gap-3 pt-2">
+                            <a href="#contact" aria-label="GitHub" class="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-colors">
+                                <i data-lucide="github" class="w-4 h-4"></i>
+                            </a>
+                            <a href="#contact" aria-label="LinkedIn" class="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-colors">
+                                <i data-lucide="linkedin" class="w-4 h-4"></i>
+                            </a>
+                            <a href="#contact" aria-label="Twitter / X" class="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-colors">
+                                <i data-lucide="twitter" class="w-4 h-4"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright Row -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <p>&copy; <span id="current-year"></span> KrishithTech Solution Pvt. Ltd. All rights reserved.</p>
+                <p>Designed &amp; engineered with clean code.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification for Clipboard Copy -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden items-center gap-2.5 px-4 py-3 rounded-xl bg-navy-900 text-white text-sm font-medium shadow-xl border border-white/10 transition-all">
+        <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+        <span id="toast-message">Email copied to clipboard!</span>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- INTERACTIVE JAVASCRIPT                                                -->
+    <!-- ===================================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            try {
+                // 1. Initialize Lucide Icons
+                if (window.lucide) {
+                    lucide.createIcons();
+                }
+
+                // Set dynamic copyright year
+                const yearEl = document.getElementById('current-year');
+                if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+                // -------------------------------------------------------------
+                // 2. Mobile Navigation Toggle
+                // -------------------------------------------------------------
+                const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
+                const iconOpen = document.getElementById('menu-icon-open');
+                const iconClose = document.getElementById('menu-icon-close');
+                const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+                function toggleMobileMenu(forceClose = false) {
+                    const isHidden = mobileMenu.classList.contains('hidden');
+                    if (forceClose || !isHidden) {
+                        mobileMenu.classList.add('hidden');
+                        iconOpen.classList.remove('hidden');
+                        iconClose.classList.add('hidden');
+                    } else {
+                        mobileMenu.classList.remove('hidden');
+                        iconOpen.classList.add('hidden');
+                        iconClose.classList.remove('hidden');
+                    }
+                }
+
+                if (mobileMenuBtn) {
+                    mobileMenuBtn.addEventListener('click', () => toggleMobileMenu());
+                }
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', () => toggleMobileMenu(true));
+                });
+
+                // -------------------------------------------------------------
+                // 3. Hero Interactive Dashboard Tabs
+                // -------------------------------------------------------------
+                const heroTabBtns = document.querySelectorAll('.hero-tab-btn');
+                const heroTabPanels = document.querySelectorAll('.hero-tab-panel');
+
+                heroTabBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const target = btn.getAttribute('data-hero-tab');
+
+                        // Update active tab styling
+                        heroTabBtns.forEach(b => {
+                            b.classList.remove('border-cyan-400', 'text-cyan-300');
+                            b.classList.add('border-transparent', 'text-slate-400');
+                        });
+                        btn.classList.remove('border-transparent', 'text-slate-400');
+                        btn.classList.add('border-cyan-400', 'text-cyan-300');
+
+                        // Show matching panel
+                        heroTabPanels.forEach(panel => {
+                            if (panel.id === `hero-panel-${target}`) {
+                                panel.classList.remove('hidden');
+                            } else {
+                                panel.classList.add('hidden');
+                            }
+                        });
+                    });
+                });
+
+                // -------------------------------------------------------------
+                // 4. Tech Stack Category Filter
+                // -------------------------------------------------------------
+                const filterBtns = document.querySelectorAll('.stack-filter-btn');
+                const stackCards = document.querySelectorAll('.stack-card');
+
+                filterBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const category = btn.getAttribute('data-stack-filter');
+
+                        // Update active button styling
+                        filterBtns.forEach(b => {
+                            b.classList.remove('bg-navy-950', 'text-white', 'shadow-sm');
+                            b.classList.add('bg-slate-100', 'text-slate-600');
+                        });
+                        btn.classList.remove('bg-slate-100', 'text-slate-600');
+                        btn.classList.add('bg-navy-950', 'text-white', 'shadow-sm');
+
+                        // Filter cards
+                        stackCards.forEach(card => {
+                            const cardCat = card.getAttribute('data-stack-category');
+                            if (category === 'all' || cardCat === category) {
+                                card.classList.remove('hidden');
+                            } else {
+                                card.classList.add('hidden');
+                            }
+                        });
+                    });
+                });
+
+                // -------------------------------------------------------------
+                // 5. Service Card -> Pre-select Service & Scroll to Contact
+                // -------------------------------------------------------------
+                const serviceSelect = document.getElementById('service-select');
+                const serviceChips = document.querySelectorAll('.service-chip');
+                const serviceCtas = document.querySelectorAll('.service-cta');
+
+                function syncServiceChips(selectedValue) {
+                    serviceChips.forEach(chip => {
+                        const chipVal = chip.getAttribute('data-chip-service');
+                        if (chipVal === selectedValue) {
+                            chip.classList.remove('bg-slate-100', 'text-slate-600', 'border-transparent');
+                            chip.classList.add('bg-indigo-600', 'text-white', 'border-indigo-600');
+                        } else {
+                            chip.classList.remove('bg-indigo-600', 'text-white', 'border-indigo-600');
+                            chip.classList.add('bg-slate-100', 'text-slate-600', 'border-transparent');
+                        }
+                    });
+                }
+
+                // Clicking a quick-pick chip updates the select dropdown
+                serviceChips.forEach(chip => {
+                    chip.addEventListener('click', () => {
+                        const val = chip.getAttribute('data-chip-service');
+                        serviceSelect.value = val;
+                        syncServiceChips(val);
+                        document.getElementById('service-error').classList.add('hidden');
+                    });
+                });
+
+                // Changing the select dropdown updates the chips
+                if (serviceSelect) {
+                    serviceSelect.addEventListener('change', (e) => {
+                        syncServiceChips(e.target.value);
+                        document.getElementById('service-error').classList.add('hidden');
+                    });
+                }
+
+                // Clicking "Discuss this service" on any service card
+                serviceCtas.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const serviceName = btn.getAttribute('data-select-service');
+                        if (serviceSelect) {
+                            serviceSelect.value = serviceName;
+                            syncServiceChips(serviceName);
+                        }
+                        // Ensure form is visible if previously submitted
+                        document.getElementById('contact-form').classList.remove('hidden');
+                        document.getElementById('form-success').classList.add('hidden');
+
+                        // Smooth scroll to contact section
+                        const contactSection = document.getElementById('contact');
+                        if (contactSection) {
+                            contactSection.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    });
+                });
+
+                // -------------------------------------------------------------
+                // 6. Contact Form Validation & Submission Handler
+                // -------------------------------------------------------------
+                const contactForm = document.getElementById('contact-form');
+                const formSuccess = document.getElementById('form-success');
+                const resetFormBtn = document.getElementById('reset-form-btn');
+
+                const nameInput = document.getElementById('name');
+                const emailInput = document.getElementById('email');
+                const detailsInput = document.getElementById('details');
+
+                const nameError = document.getElementById('name-error');
+                const emailError = document.getElementById('email-error');
+                const serviceError = document.getElementById('service-error');
+                const detailsError = document.getElementById('details-error');
+
+                const submitBtn = document.getElementById('submit-btn');
+                const submitBtnText = document.getElementById('submit-btn-text');
+
+                function isValidEmail(email) {
+                    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+                }
+
+                if (contactForm) {
+                    contactForm.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        let isValid = true;
+
+                        // Validate Name
+                        if (!nameInput.value.trim()) {
+                            nameError.classList.remove('hidden');
+                            isValid = false;
+                        } else {
+                            nameError.classList.add('hidden');
+                        }
+
+                        // Validate Email
+                        if (!isValidEmail(emailInput.value.trim())) {
+                            emailError.classList.remove('hidden');
+                            isValid = false;
+                        } else {
+                            emailError.classList.add('hidden');
+                        }
+
+                        // Validate Service
+                        if (!serviceSelect.value) {
+                            serviceError.classList.remove('hidden');
+                            isValid = false;
+                        } else {
+                            serviceError.classList.add('hidden');
+                        }
+
+                        // Validate Project Details
+                        if (detailsInput.value.trim().length < 5) {
+                            detailsError.classList.remove('hidden');
+                            isValid = false;
+                        } else {
+                            detailsError.classList.add('hidden');
+                        }
+
+                        if (!isValid) return;
+
+                        // Simulate brief sending state for polished UX
+                        submitBtn.disabled = true;
+                        submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+                        submitBtnText.textContent = 'Sending Request...';
+
+                        setTimeout(() => {
+                            // Populate confirmation details
+                            document.getElementById('confirm-name').textContent = nameInput.value.trim();
+                            document.getElementById('confirm-service').textContent = serviceSelect.value;
+                            document.getElementById('confirm-email').textContent = emailInput.value.trim();
+
+                            // Swap form with confirmation message
+                            contactForm.classList.add('hidden');
+                            formSuccess.classList.remove('hidden');
+
+                            // Reset button state
+                            submitBtn.disabled = false;
+                            submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+                            submitBtnText.textContent = 'Request Free Consultation';
+                        }, 550);
+                    });
+                }
+
+                if (resetFormBtn) {
+                    resetFormBtn.addEventListener('click', () => {
+                        contactForm.reset();
+                        syncServiceChips('');
+                        formSuccess.classList.add('hidden');
+                        contactForm.classList.remove('hidden');
+                    });
+                }
+
+                // -------------------------------------------------------------
+                // 7. Copy Email to Clipboard (iFrame-safe execCommand fallback)
+                // -------------------------------------------------------------
+                const copyEmailBtn = document.getElementById('copy-email-btn');
+                const toast = document.getElementById('toast');
+                let toastTimeout;
+
+                function showToast(message) {
+                    const msgEl = document.getElementById('toast-message');
+                    if (msgEl) msgEl.textContent = message;
+                    toast.classList.remove('hidden');
+                    toast.classList.add('flex');
+                    clearTimeout(toastTimeout);
+                    toastTimeout = setTimeout(() => {
+                        toast.classList.add('hidden');
+                        toast.classList.remove('flex');
+                    }, 2600);
+                }
+
+                if (copyEmailBtn) {
+                    copyEmailBtn.addEventListener('click', () => {
+                        const emailText = document.getElementById('contact-email-text').textContent.trim();
+                        const tempInput = document.createElement('textarea');
+                        tempInput.value = emailText;
+                        tempInput.style.position = 'fixed';
+                        tempInput.style.opacity = '0';
+                        document.body.appendChild(tempInput);
+                        tempInput.select();
+                        try {
+                            document.execCommand('copy');
+                            showToast('Email copied to clipboard!');
+                        } catch (err) {
+                            showToast('Email: ' + emailText);
+                        }
+                        document.body.removeChild(tempInput);
+                    });
+                }
+
+                // -------------------------------------------------------------
+                // 8. Smooth Scroll-Reveal Animations via IntersectionObserver
+                // -------------------------------------------------------------
+                const revealElements = document.querySelectorAll('.reveal-on-scroll');
+                if ('IntersectionObserver' in window) {
+                    const observer = new IntersectionObserver((entries, obs) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.remove('opacity-0', 'translate-y-6');
+                                entry.target.classList.add('opacity-100', 'translate-y-0');
+                                obs.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.12 });
+
+                    revealElements.forEach(el => observer.observe(el));
+                } else {
+                    // Fallback for older browsers
+                    revealElements.forEach(el => {
+                        el.classList.remove('opacity-0', 'translate-y-6');
+                    });
+                }
+            } catch (error) {
+                console.error('Initialization error:', error);
+            }
+        });
+    </script>
+</body>
+</html>
